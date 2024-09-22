@@ -115,4 +115,7 @@ export default [
       'jsx-a11y/prefer-tag-over-role': 'off',
     },
   },
+  {
+    ignores: ['*.md', 'node_modules/', '/dist'],
+  },
 ];
