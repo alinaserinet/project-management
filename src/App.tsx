@@ -7,7 +7,7 @@ import { useState } from 'react';
 import viteLogo from '/vite.svg';
 
 const App = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState<number>(0);
   return (
     <>
       <Button>button</Button>
@@ -21,7 +21,7 @@ const App = () => {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount(count => count + 1)}>
+        <button onClick={() => setCount(prevCount => prevCount + 1)}>
           count is {count}
         </button>
         <p>

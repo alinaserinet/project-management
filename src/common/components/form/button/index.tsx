@@ -7,7 +7,6 @@ interface ButtonProps
   extends DetailedHTMLProps<
     ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
-  > {
-}
+  > {}
 
 export const Button = styled.button<ButtonProps>(buttonStyles);

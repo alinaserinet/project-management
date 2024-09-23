@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
+    "lint:ci": "eslint .",
+    "lint": "pnpm run lint:ci --fix",
     "preview": "vite preview",
     "prepare": "husky"
   },
@@ -18,7 +19,7 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "prettier --write",
-      "eslint --fix"
+      "pnpm run lint"
     ]
   },
   "dependencies": {
