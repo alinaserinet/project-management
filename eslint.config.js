@@ -1,6 +1,7 @@
 import jsPlugin from '@eslint/js';
 import jestPlugin from 'eslint-plugin-jest';
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
+import prettierPlugin from 'eslint-plugin-prettier';
 import recommendedPrettierPlugin from 'eslint-plugin-prettier/recommended';
 import promisePlugin from 'eslint-plugin-promise';
 import reactPlugin from 'eslint-plugin-react';
@@ -36,12 +37,14 @@ export default [
       'simple-import-sort': simpleImportSortPlugin,
       'react-hooks': hooksPlugin,
       'jsx-a11y': jsxA11yPlugin,
+      'prettier': prettierPlugin,
     },
     rules: {
       ...hooksPlugin.configs.recommended.rules,
       ...jestPlugin.configs['flat/recommended'].rules,
 
       // base
+      'prettier/prettier': 'error',
       'camelcase': ['warn', { properties: 'always' }],
       'comma-spacing': ['warn', { after: true, before: false }],
       'max-depth': ['error', 4],
