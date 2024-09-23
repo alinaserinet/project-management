@@ -7,6 +7,7 @@ import promisePlugin from 'eslint-plugin-promise';
 import reactPlugin from 'eslint-plugin-react';
 import hooksPlugin from 'eslint-plugin-react-hooks';
 import simpleImportSortPlugin from 'eslint-plugin-simple-import-sort';
+import storybookPlugin from 'eslint-plugin-storybook';
 import globals from 'globals';
 import tsESLint from 'typescript-eslint';
 
@@ -38,6 +39,7 @@ export default [
       'react-hooks': hooksPlugin,
       'jsx-a11y': jsxA11yPlugin,
       'prettier': prettierPlugin,
+      'storybook': storybookPlugin,
     },
     rules: {
       ...hooksPlugin.configs.recommended.rules,
@@ -273,6 +275,16 @@ export default [
       'jsx-a11y/tabindex-no-positive': 'warn',
       'jsx-a11y/anchor-ambiguous-text': 'off',
       'jsx-a11y/prefer-tag-over-role': 'off',
+      // storybook
+      'storybook/await-interactions': 'error',
+      'storybook/context-in-play-function': 'error',
+      'storybook/default-exports': 'error',
+      'storybook/no-redundant-story-name': 'warn',
+      'storybook/use-storybook-expect': 'error',
+      'storybook/use-storybook-testing-library': 'error',
+      'storybook/no-stories-of': 'warn',
+      'storybook/no-title-property-in-meta': 'off',
+      'storybook/meta-inline-properties': 'off',
     },
   },
   {
