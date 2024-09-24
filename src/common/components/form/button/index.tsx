@@ -3,6 +3,7 @@ import type { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
 
 import { buttonStyles } from './button.styles';
 
+export default {};
 interface ButtonProps
   extends DetailedHTMLProps<
     ButtonHTMLAttributes<HTMLButtonElement>,
