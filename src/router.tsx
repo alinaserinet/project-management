@@ -1,6 +1,6 @@
-import { RouterGenerator } from '@common/components';
 import { GuestGuard, UserGuard } from '@common/guards';
-import type { Route } from '@common/types';
+import type { Route } from '@core';
+import { RouterGenerator } from '@core';
 import type { FC } from 'react';
 import { lazy } from 'react';
 

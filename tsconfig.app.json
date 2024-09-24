@@ -19,7 +19,9 @@
     "noFallthroughCasesInSwitch": true,
     "paths": {
       "@common/*": ["./src/common/*"],
-      "@store": ["./src/store"]
+      "@store": ["./src/store"],
+      "@core": ["./src/features/core"],
+      "@core/*": ["./src/features/core/*"]
     }
   },
   "include": ["src"]

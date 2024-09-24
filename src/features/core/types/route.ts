@@ -1,6 +1,5 @@
+import type { Guard } from '@common/types';
 import type { ComponentType } from 'react';
-
-import type { Guard } from './guard';
 
 export interface Route {
   path: string;

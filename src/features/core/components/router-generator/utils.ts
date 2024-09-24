@@ -1,4 +1,4 @@
-import type { Route } from '@common/types';
+import type { Route } from '@core/types';
 
 export const isGeneralRoute = (route: Route) => {
   const { path } = route;

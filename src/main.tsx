@@ -1,4 +1,4 @@
-import { Provider } from '@common/components';
+import { Provider } from '@core';
 import { store } from '@store';
 import { StrictMode, Suspense } from 'react';
 import { createRoot } from 'react-dom/client';

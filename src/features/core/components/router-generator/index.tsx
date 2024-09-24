@@ -1,5 +1,5 @@
 import { NotFoundError } from '@common/components';
-import type { Route as RouteType } from '@common/types';
+import type { Route as RouteType } from '@core/types';
 import type { FC } from 'react';
 import { Suspense } from 'react';
 import { Route, Routes } from 'react-router';
