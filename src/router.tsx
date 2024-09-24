@@ -1,19 +1,22 @@
+import { RouterGenerator } from '@common/components';
+import { GuestGuard, UserGuard } from '@common/guards';
+import type { Route } from '@common/types';
 import type { FC } from 'react';
 import { lazy } from 'react';
-import { RouterProvider } from 'react-router';
-import { createBrowserRouter } from 'react-router-dom';
 
-const router = createBrowserRouter([
+const routes: Route[] = [
   {
     path: '/auth/*',
-    Component: lazy(() => import('./pages/auth')),
+    component: lazy(() => import('./pages/auth')),
+    guards: [UserGuard],
   },
   {
     path: '/*',
-    Component: lazy(() => import('./pages/root')),
+    component: lazy(() => import('./pages/root')),
+    guards: [GuestGuard, UserGuard],
   },
-]);
+];
 
 export const Router: FC = () => {
-  return <RouterProvider router={router} />;
+  return <RouterGenerator routes={routes} />;
 };
