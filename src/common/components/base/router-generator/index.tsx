@@ -1,10 +1,10 @@
 import { NotFoundError } from '@common/components';
-import { GuardsWrapper } from '@common/components/base/router-generator/guards-wrapper.tsx';
 import type { Route as RouteType } from '@common/types';
 import type { FC } from 'react';
 import { Suspense } from 'react';
 import { Route, Routes } from 'react-router';
 
+import { GuardsWrapper } from './guards-wrapper';
 import { RouteWrapper } from './route-wrapper';
 import { isGeneralRoute } from './utils';
 
