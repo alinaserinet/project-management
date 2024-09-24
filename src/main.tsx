@@ -1,15 +1,16 @@
+import { Provider } from '@common/components';
+import { store } from '@store';
 import { StrictMode, Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
 
 import { Router } from './router';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
+    <Provider store={store}>
       <Suspense fallback={<>loading</>}>
         <Router />
       </Suspense>
-    </BrowserRouter>
+    </Provider>
   </StrictMode>,
 );

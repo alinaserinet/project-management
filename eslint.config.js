@@ -276,6 +276,6 @@ export default [
     },
   },
   {
-    ignores: ['*.md', 'node_modules/', '/dist'],
+    ignores: ['*.md', 'node_modules/', 'dist'],
   },
 ];
