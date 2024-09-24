@@ -8,12 +8,12 @@ const routes: Route[] = [
   {
     path: '/auth/*',
     component: lazy(() => import('./pages/auth')),
-    guards: [UserGuard],
+    guards: [GuestGuard],
   },
   {
     path: '/*',
     component: lazy(() => import('./pages/root')),
-    guards: [GuestGuard, UserGuard],
+    guards: [UserGuard],
   },
 ];
 

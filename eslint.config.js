@@ -64,6 +64,7 @@ export default [
       'no-await-in-loop': 'error',
       'no-console': 'warn',
       'no-const-assign': 'error',
+      'react/prop-types': 'off',
 
       // import
       'simple-import-sort/exports': 'warn',
