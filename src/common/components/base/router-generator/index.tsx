@@ -12,10 +12,10 @@ interface RouterGeneratorProps {
 }
 
 export const RouterGenerator: FC<RouterGeneratorProps> = ({ routes }) => {
-  const hasGeneralPath = routes.find(isGeneralRoute);
+  const hasGeneralRoute = routes.find(isGeneralRoute);
 
-  // add general path to handle not found error
-  if (!hasGeneralPath) {
+  // add general route to handle not found error
+  if (!hasGeneralRoute) {
     routes.push({
       path: '*',
       title: 'not found',
