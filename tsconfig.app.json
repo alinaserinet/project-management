@@ -22,7 +22,9 @@
       "@common/*": ["./src/common/*"],
       "@store": ["./src/store"],
       "@core": ["./src/features/core"],
-      "@core/*": ["./src/features/core/*"]
+      "@core/*": ["./src/features/core/*"],
+      "@project": ["./src/features/project"],
+      "@project/*": ["./src/features/project/*"]
     }
   },
   "include": ["src"]

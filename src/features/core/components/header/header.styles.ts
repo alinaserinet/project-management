@@ -7,4 +7,5 @@ export const headerStyles = css({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
+  color: theme.colors.light,
 });
