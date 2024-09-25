@@ -1,4 +1,4 @@
-import { globalStyles } from '@common/styles';
+import { globalStyles } from '@common/design';
 import { Provider } from '@core';
 import { Global } from '@emotion/react';
 import { store } from '@store';
