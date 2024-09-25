@@ -22,8 +22,8 @@ const router: Router = {
   ],
 };
 
-const Root = () => {
+const ProjectsRouter = () => {
   return <RouterGenerator router={router} />;
 };
 
-export default Root;
+export default ProjectsRouter;

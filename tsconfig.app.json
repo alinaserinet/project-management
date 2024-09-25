@@ -24,7 +24,9 @@
       "@core": ["./src/features/core"],
       "@core/*": ["./src/features/core/*"],
       "@project": ["./src/features/project"],
-      "@project/*": ["./src/features/project/*"]
+      "@project/*": ["./src/features/project/*"],
+      "@task": ["./src/features/task"],
+      "@task/*": ["./src/features/task/*"]
     }
   },
   "include": ["src"]

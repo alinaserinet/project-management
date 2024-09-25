@@ -17,11 +17,16 @@ const router: Router = {
       title: 'root',
       component: lazy(() => import('./projects')),
     },
+    {
+      path: '/tasks/*',
+      title: 'root',
+      component: lazy(() => import('./tasks')),
+    },
   ],
 };
 
-const Root = () => {
+const RootRouter = () => {
   return <RouterGenerator router={router} />;
 };
 
-export default Root;
+export default RootRouter;
