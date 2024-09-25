@@ -4,7 +4,7 @@ import type { StoreState } from '@store';
 import { useDispatch, useSelector } from 'react-redux';
 
 export const usePageItem = (key: keyof PageState) => {
-  return useSelector<StoreState>(state => state.page[key]);
+  return useSelector<StoreState>(state => state.page[key]) as string | null;
 };
 
 export const useSetPageTitle = () => {

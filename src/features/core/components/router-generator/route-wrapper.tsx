@@ -2,6 +2,7 @@ import { useSetPageDescription, useSetPageTitle } from '@core/hooks';
 import type { Route } from '@core/types';
 import type { FC } from 'react';
 import { useEffect } from 'react';
+import { useLocation } from 'react-router';
 
 interface RouteWrapperProps extends Route {}
 
@@ -13,8 +14,11 @@ export const RouteWrapper: FC<RouteWrapperProps> = ({
 }) => {
   const setPageTitle = useSetPageTitle();
   const setPageDescription = useSetPageDescription();
+  const { pathname: currentPathname } = useLocation();
 
   useEffect(() => {
+    if (!currentPathname?.includes(path)) return;
+
     if (title) {
       setPageTitle(title);
     }
@@ -28,7 +32,7 @@ export const RouteWrapper: FC<RouteWrapperProps> = ({
       setPageDescription('');
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [path]);
+  }, [currentPathname]);
 
   if (!Component) return null;
 
