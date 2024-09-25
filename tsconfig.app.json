@@ -17,6 +17,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+    "jsxImportSource": "@emotion/react",
     "paths": {
       "@common/*": ["./src/common/*"],
       "@store": ["./src/store"],

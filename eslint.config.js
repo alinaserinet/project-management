@@ -70,6 +70,9 @@ export default [
       'simple-import-sort/exports': 'warn',
       'simple-import-sort/imports': 'warn',
 
+      // react
+      'react/no-unknown-property': ['error', { ignore: ['css'] }],
+
       // typescript
       '@typescript-eslint/consistent-type-imports': 'warn',
       '@typescript-eslint/adjacent-overload-signatures': 'error',

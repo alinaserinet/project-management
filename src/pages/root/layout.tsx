@@ -1,4 +1,4 @@
-import { Header } from '@core';
+import { MainHeader } from '@core';
 import type { FC, ReactNode } from 'react';
 
 interface RootLayoutProps {
@@ -8,7 +8,7 @@ interface RootLayoutProps {
 export const RootLayout: FC<RootLayoutProps> = ({ children }) => {
   return (
     <>
-      <Header />
+      <MainHeader />
       <div>{children}</div>
     </>
   );
