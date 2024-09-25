@@ -22,4 +22,15 @@ export const defaultTheme: Theme = {
     border: '#DEE2E6', // Light Gray
     shadow: '#00000026', // Semi-transparent Black (equivalent to rgba(0, 0, 0, 0.15))
   },
+  breakpoints: {
+    sm: '480px',
+    md: '768px',
+    lg: '1024px',
+    xl: '1280px',
+  },
+  spacing: {
+    small: '8px',
+    medium: '16px',
+    large: '24px',
+  },
 };

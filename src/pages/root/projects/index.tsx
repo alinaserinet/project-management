@@ -14,6 +14,11 @@ const router: Router = {
       title: 'create project',
       component: lazy(() => import('./create')),
     },
+    {
+      path: '/:id',
+      title: 'project',
+      component: lazy(() => import('./single')),
+    },
   ],
 };
 
