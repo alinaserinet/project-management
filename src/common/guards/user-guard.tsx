@@ -6,7 +6,7 @@ export const UserGuard: Guard = ({ children }) => {
   const accessToken = getAccessToken();
 
   if (accessToken) {
-    return <Navigate to="/" />;
+    return <Navigate to="/" replace />;
   }
 
   return children ?? null;

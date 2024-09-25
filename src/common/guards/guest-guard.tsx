@@ -6,7 +6,7 @@ export const GuestGuard: Guard = ({ children }) => {
   const accessToken = getAccessToken();
 
   if (!accessToken) {
-    return <Navigate to="/auth/login" />;
+    return <Navigate to="/auth/login" replace />;
   }
 
   return children ?? null;
