@@ -1,6 +1,7 @@
-import type { ProjectInput } from '@project/components/create-form/types.ts';
 import type { ZodType } from 'zod';
 import { z } from 'zod';
+
+import type { ProjectInput } from './types';
 
 export const projectInputSchema: ZodType<ProjectInput> = z.object({
   name: z.string().min(1),

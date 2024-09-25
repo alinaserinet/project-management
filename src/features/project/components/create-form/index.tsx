@@ -7,11 +7,12 @@ import {
   VerticalGapWrapper,
 } from '@common/components';
 import { zodResolver } from '@hookform/resolvers/zod';
-import type { ProjectInputSchema } from '@project/components/create-form/schemas.ts';
-import { projectInputSchema } from '@project/components/create-form/schemas.ts';
 import type { FC } from 'react';
 import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
+
+import type { ProjectInputSchema } from './schemas';
+import { projectInputSchema } from './schemas';
 
 export const CreateProjectForm: FC = () => {
   const {
