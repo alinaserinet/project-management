@@ -1,6 +1,7 @@
 import {
   Button,
   Input,
+  InputError,
   Label,
   Textarea,
   VerticalGapWrapper,
@@ -31,12 +32,12 @@ export const CreateProjectForm: FC = () => {
         <div>
           <Label htmlFor="name">Name</Label>
           <Input id="name" {...register('name')} />
-          <span>{errors?.name?.message}</span>
+          <InputError error={errors?.name} />
         </div>
         <div>
           <Label htmlFor="description">Description</Label>
           <Textarea id="description" {...register('description')} />
-          <span>{errors?.description?.message}</span>
+          <InputError error={errors?.description} />
         </div>
         <div>
           <Button>Save</Button>
