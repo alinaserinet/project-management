@@ -28,9 +28,9 @@ export const RouterGenerator: FC<RouterGeneratorProps> = ({ router }) => {
   }
 
   return (
-    <Suspense fallback={<div>loading...</div>}>
-      <GuardsWrapper guards={guards}>
-        <LayoutWrapper layout={layout}>
+    <GuardsWrapper guards={guards}>
+      <LayoutWrapper layout={layout}>
+        <Suspense fallback={<div>loading...</div>}>
           <Routes>
             {routes.map(route => (
               <Route
@@ -44,8 +44,8 @@ export const RouterGenerator: FC<RouterGeneratorProps> = ({ router }) => {
               />
             ))}
           </Routes>
-        </LayoutWrapper>
-      </GuardsWrapper>
-    </Suspense>
+        </Suspense>
+      </LayoutWrapper>
+    </GuardsWrapper>
   );
 };
