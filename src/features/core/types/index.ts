@@ -1,2 +1,2 @@
 export type * from './page';
-export type * from './route';
+export type * from './router';

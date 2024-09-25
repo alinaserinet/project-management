@@ -1,12 +1,15 @@
-import type { Route } from '@core';
+import type { Router } from '@core';
 import { RouterGenerator } from '@core';
 
-const routes: Route[] = [
-  { path: '/', component: () => <h1>root</h1>, title: 'root' },
-];
+import { RootLayout } from './layout';
+
+const router: Router = {
+  layout: RootLayout,
+  routes: [{ path: '/', component: () => <h1>root</h1>, title: 'root' }],
+};
 
 const Root = () => {
-  return <RouterGenerator routes={routes} />;
+  return <RouterGenerator router={router} />;
 };
 
 export default Root;

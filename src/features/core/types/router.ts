@@ -1,4 +1,4 @@
-import type { Guard } from '@common/types';
+import type { Guard, LayoutComponent } from '@common/types';
 import type { ComponentType } from 'react';
 
 export interface Route {
@@ -7,4 +7,10 @@ export interface Route {
   description?: string;
   guards?: Guard[];
   component?: ComponentType | null;
+}
+
+export interface Router {
+  routes: Route[];
+  guards?: Guard[];
+  layout?: LayoutComponent;
 }

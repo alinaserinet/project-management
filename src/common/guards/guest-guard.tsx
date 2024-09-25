@@ -5,8 +5,8 @@ import { Navigate } from 'react-router';
 export const GuestGuard: Guard = ({ children }) => {
   const accessToken = getAccessToken();
 
-  if (accessToken) {
-    return <Navigate to="/" />;
+  if (!accessToken) {
+    return <Navigate to="/auth/login" />;
   }
 
   return children ?? null;
