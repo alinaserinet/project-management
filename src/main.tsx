@@ -1,5 +1,5 @@
 import { globalStyles } from '@common/design';
-import { Provider } from '@core';
+import { PageLoader, Provider } from '@core';
 import { Global } from '@emotion/react';
 import { store } from '@store';
 import { StrictMode, Suspense } from 'react';
@@ -9,11 +9,11 @@ import { AppRouter } from './router';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Global styles={globalStyles} />
-    <Provider store={store}>
-      <Suspense fallback={<>loading</>}>
+    <Suspense fallback={<PageLoader />}>
+      <Global styles={globalStyles} />
+      <Provider store={store}>
         <AppRouter />
-      </Suspense>
-    </Provider>
+      </Provider>
+    </Suspense>
   </StrictMode>,
 );

@@ -4,6 +4,7 @@ import type { FC } from 'react';
 import { Suspense } from 'react';
 import { Route, Routes } from 'react-router';
 
+import { PageLoader } from '../page-loader';
 import { GuardsWrapper } from './guards-wrapper';
 import { LayoutWrapper } from './layout-wrapper';
 import { RouteWrapper } from './route-wrapper';
@@ -30,7 +31,7 @@ export const RouterGenerator: FC<RouterGeneratorProps> = ({ router }) => {
   return (
     <GuardsWrapper guards={guards}>
       <LayoutWrapper layout={layout}>
-        <Suspense fallback={<div>loading...</div>}>
+        <Suspense fallback={<PageLoader />}>
           <Routes>
             {routes.map(route => (
               <Route

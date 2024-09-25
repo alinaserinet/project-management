@@ -3,7 +3,7 @@ import { CreateProjectForm } from '@project';
 const CreateProject = () => {
   return (
     <div>
-      <h1>projects</h1>
+      <h1>Create Project</h1>
       <CreateProjectForm />
     </div>
   );

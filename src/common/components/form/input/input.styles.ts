@@ -3,6 +3,7 @@ import { css } from '@emotion/react';
 
 export const inputStyles = css({
   'width': '100%',
+  'display': 'block',
   'padding': '8px 12px',
   'fontSize': '16px',
   'lineHeight': '1.5',
