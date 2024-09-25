@@ -1,25 +1,30 @@
-import { ProjectPreviewCard, ProjectsPreviewWrapper } from '@project';
+import {
+  ProjectPreviewCard,
+  ProjectsPreviewWrapper,
+  useProjects,
+  useProjectsStatus,
+} from '@project';
 import { Link } from 'react-router-dom';
 
 const ProjectList = () => {
+  const projects = useProjects();
+  const projectsStatus = useProjectsStatus();
+
   return (
     <div>
       <h1>projects</h1>
-      <ProjectsPreviewWrapper>
-        <ProjectPreviewCard
-          name="project one"
-          id={1}
-          description="test"
-          createdAt={1233}
-        />
-        <ProjectPreviewCard
-          name="project one"
-          id={1}
-          description="test"
-          createdAt={1233}
-        />
-      </ProjectsPreviewWrapper>
       <Link to="/projects/create">create</Link>
+      <ProjectsPreviewWrapper status={projectsStatus}>
+        {projects.map(({ id, description, name, createdAt }) => (
+          <ProjectPreviewCard
+            key={id}
+            name={name}
+            id={id}
+            description={description}
+            createdAt={createdAt}
+          />
+        ))}
+      </ProjectsPreviewWrapper>
     </div>
   );
 };

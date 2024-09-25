@@ -1,7 +1,7 @@
 import { Loader } from '@common/components';
 import type { FC } from 'react';
 
-import { pageLoaderWrapperStyles } from './page-loader.styles';
+import { pageLoaderWrapperStyles } from './loaders.styles';
 
 export const PageLoader: FC = () => {
   return (

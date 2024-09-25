@@ -1,10 +1,9 @@
-import { NotFoundError } from '@common/components';
+import { Loader, NotFoundError } from '@common/components';
 import type { Router } from '@core/types';
 import type { FC } from 'react';
 import { Suspense } from 'react';
 import { Route, Routes } from 'react-router';
 
-import { PageLoader } from '../page-loader';
 import { GuardsWrapper } from './guards-wrapper';
 import { LayoutWrapper } from './layout-wrapper';
 import { RouteWrapper } from './route-wrapper';
@@ -31,7 +30,7 @@ export const RouterGenerator: FC<RouterGeneratorProps> = ({ router }) => {
   return (
     <GuardsWrapper guards={guards}>
       <LayoutWrapper layout={layout}>
-        <Suspense fallback={<PageLoader />}>
+        <Suspense fallback={<Loader type="page" />}>
           <Routes>
             {routes.map(route => (
               <Route

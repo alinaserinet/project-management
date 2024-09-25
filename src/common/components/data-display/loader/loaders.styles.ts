@@ -56,3 +56,14 @@ export const bubbleLoaderStyles = css({
     left: '3.5em',
   },
 });
+
+export const pageLoaderWrapperStyles = css({
+  height: '100vh',
+  width: '100vw',
+  position: 'fixed',
+  top: 0,
+  left: 0,
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+});

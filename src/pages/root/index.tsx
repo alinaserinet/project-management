@@ -1,6 +1,9 @@
 import type { Router } from '@core';
 import { RouterGenerator } from '@core';
-import { lazy } from 'react';
+import { fetchProjects } from '@project';
+import type { AppDispatch } from '@store';
+import { lazy, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { RootLayout } from './layout';
 
@@ -26,6 +29,13 @@ const router: Router = {
 };
 
 const RootRouter = () => {
+  const dispatch = useDispatch<AppDispatch>();
+
+  useEffect(() => {
+    dispatch(fetchProjects());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return <RouterGenerator router={router} />;
 };
 

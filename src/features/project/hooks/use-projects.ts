@@ -1,0 +1,21 @@
+import type { FetchStatus, ID } from '@common/types';
+import type { ProjectPreview } from '@project/types';
+import type { StoreState } from '@store';
+import { useSelector } from 'react-redux';
+
+export const useProjects = () => {
+  const projectRecords = useSelector<StoreState, Record<ID, ProjectPreview>>(
+    state => state.projects.list,
+  );
+  return Object.values(projectRecords);
+};
+
+export const useProjectsStatus = () => {
+  return useSelector<StoreState, FetchStatus>(state => state.projects.status);
+};
+
+export const useProject = (id: ID) => {
+  return useSelector<StoreState, ProjectPreview | null>(
+    state => state.projects.list[id] ?? null,
+  );
+};

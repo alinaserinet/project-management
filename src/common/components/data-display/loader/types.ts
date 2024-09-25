@@ -1,1 +1,1 @@
-export type LoaderType = 'bubble' | 'spin';
+export type LoaderType = 'bubble' | 'page' | 'spin';

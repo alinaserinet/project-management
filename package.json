@@ -11,7 +11,8 @@
     "preview": "vite preview",
     "prepare": "husky",
     "sb": "storybook dev -p 6006",
-    "build-sb": "storybook build"
+    "build-sb": "storybook build",
+    "api": "json-server --watch ./mock/db.json --port=3001"
   },
   "husky": {
     "hooks": {
@@ -29,6 +30,7 @@
     "@emotion/styled": "^11.13.0",
     "@hookform/resolvers": "^3.9.0",
     "@reduxjs/toolkit": "^2.2.7",
+    "axios": "^1.7.7",
     "polished": "^4.3.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -68,6 +70,7 @@
     "globals": "^15.9.0",
     "husky": "^9.1.6",
     "jest": "^29.7.0",
+    "json-server": "1.0.0-beta.3",
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
     "storybook": "^8.3.2",

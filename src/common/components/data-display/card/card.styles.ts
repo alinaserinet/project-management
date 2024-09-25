@@ -7,7 +7,6 @@ export const cardStyles = css({
   'borderRadius': '8px',
   'border': `1px solid ${theme.colors.border}`,
   'padding': '16px',
-  'margin': '16px 0',
   'transition': 'border-color 0.2s ease, transform 0.2s ease',
   '&:hover': {
     borderColor: theme.colors.primary,

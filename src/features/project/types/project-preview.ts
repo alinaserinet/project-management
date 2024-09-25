@@ -1,6 +1,8 @@
+import type { ID } from '@common/types';
+
 export interface ProjectPreview {
   name: string;
-  id: number;
+  id: ID;
   description: string;
   createdAt: number;
 }
