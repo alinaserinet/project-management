@@ -4,7 +4,7 @@ const CreateProject = () => {
   return (
     <div>
       <h1>Create Project</h1>
-      <CreateProjectForm />
+      <CreateProjectForm callback="/projects" />
     </div>
   );
 };

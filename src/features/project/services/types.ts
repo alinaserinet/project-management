@@ -6,3 +6,5 @@ export interface TransmissibleProjectPreview {
   id: ID;
   name: string;
 }
+
+export interface TransmissibleProject extends TransmissibleProjectPreview {}

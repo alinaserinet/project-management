@@ -1,7 +1,12 @@
-import type { HttpClient } from '@common/types';
-import { projectPreviewTransformer } from '@project/services/transformers.ts';
+import type { HttpClient, ID, NoId } from '@common/types';
+import type { Project } from '@project';
+import type { AxiosResponse } from 'axios';
 
-import type { TransmissibleProjectPreview } from './types';
+import { projectPreviewTransformer, projectTransformer } from './transformers';
+import type {
+  TransmissibleProject,
+  TransmissibleProjectPreview,
+} from './types';
 
 export class ProjectService {
   public constructor(
@@ -16,5 +21,24 @@ export class ProjectService {
       this.basePath,
     );
     return data?.map(projectPreviewTransformer);
+  }
+
+  public async get(id: ID) {
+    const { data } = await this.client.get<TransmissibleProject>(
+      `${this.basePath}/${id}`,
+    );
+    return projectTransformer(data);
+  }
+
+  public async create(input: Omit<Project, 'createdAt' | 'id'>) {
+    const { data } = await this.client.post<
+      NoId<TransmissibleProject>,
+      AxiosResponse<TransmissibleProjectPreview>
+    >(this.basePath, {
+      created_at: Math.floor(Date.now() / 1000),
+      description: input.description,
+      name: input.name,
+    });
+    return projectPreviewTransformer(data);
   }
 }

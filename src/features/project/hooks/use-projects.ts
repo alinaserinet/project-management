@@ -1,7 +1,8 @@
 import type { FetchStatus, ID } from '@common/types';
+import { addProject } from '@project/slices';
 import type { ProjectPreview } from '@project/types';
 import type { StoreState } from '@store';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 export const useProjects = () => {
   const projectRecords = useSelector<StoreState, Record<ID, ProjectPreview>>(
@@ -18,4 +19,11 @@ export const useProject = (id: ID) => {
   return useSelector<StoreState, ProjectPreview | null>(
     state => state.projects.list[id] ?? null,
   );
+};
+
+export const useAddProject = () => {
+  const dispatch = useDispatch();
+  return (project: ProjectPreview) => {
+    dispatch(addProject(project));
+  };
 };
