@@ -15,6 +15,10 @@ export const buttonStyles = css({
   'textDecoration': 'none',
   'textAlign': 'center',
   'cursor': 'pointer',
+  '&.small': {
+    padding: '5px',
+    fontSize: '0.75rem',
+  },
   '&.block': {
     display: 'block',
     width: '100%',

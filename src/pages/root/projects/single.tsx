@@ -12,7 +12,7 @@ const SingleProject = () => {
 
   const [tasks, setTasks] = useState<TaskPreview[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<unknown>(null);
+  const [_, setError] = useState<unknown>(null);
 
   useEffect(() => {
     if (!project) return;
@@ -28,9 +28,6 @@ const SingleProject = () => {
     return () => controller.abort();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [project?.id]);
-
-  // eslint-disable-next-line no-console
-  console.log(error);
 
   return (
     <div>

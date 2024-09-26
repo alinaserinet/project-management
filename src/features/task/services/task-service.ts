@@ -63,4 +63,26 @@ export class TaskService {
     );
     return data;
   }
+
+  public async update(input: Task, signal?: AbortSignal) {
+    const { data } = await this.client.put<
+      Omit<TransmissibleTask, 'created_at' | 'project_id'>,
+      AxiosResponse<TransmissibleTaskPreview>
+    >(
+      `${this.basePath}/${input.id}`,
+      {
+        id: input.id,
+        status: input.status,
+        created_at: input.createdAt,
+        description: input.description,
+        title: input.title,
+        project_id: input.project.id,
+        date: input.date,
+      },
+      {
+        signal,
+      },
+    );
+    return data;
+  }
 }

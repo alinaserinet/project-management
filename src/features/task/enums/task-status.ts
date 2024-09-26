@@ -1,5 +1,5 @@
 export const enum TaskStatus {
-  ToDo,
+  ToDo = 0,
   InProgress,
   Done,
 }
