@@ -7,7 +7,7 @@ const router: Router = {
   routes: [
     {
       path: '/create',
-      title: 'create task',
+      title: 'Create New Task',
       component: lazy(() => import('./create')),
       guards: [NoProjectQueryGuard],
     },

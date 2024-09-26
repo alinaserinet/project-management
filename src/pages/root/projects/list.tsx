@@ -1,10 +1,10 @@
+import { SectionHeader } from '@core';
 import {
   ProjectPreviewCard,
   ProjectsPreviewWrapper,
   useProjects,
   useProjectsStatus,
 } from '@project';
-import { Link } from 'react-router-dom';
 
 const ProjectList = () => {
   const projects = useProjects();
@@ -12,8 +12,11 @@ const ProjectList = () => {
 
   return (
     <div>
-      <h1>projects</h1>
-      <Link to="/projects/create">create</Link>
+      <SectionHeader
+        title="Projects List"
+        createPath="/projects/create"
+        createTitle="New Project"
+      />
       <ProjectsPreviewWrapper status={projectsStatus}>
         {projects.map(({ id, description, name, createdAt }) => (
           <ProjectPreviewCard

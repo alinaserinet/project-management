@@ -11,7 +11,7 @@ interface RouteWrapperProps {
 }
 
 const RouteWrapperComponent: FC<RouteWrapperProps> = ({ route }) => {
-  const { component: Component, path, title, description } = route;
+  const { component: Component, title, description } = route;
   const setPageTitle = useSetPageTitle();
   const setPageDescription = useSetPageDescription();
   const location = useLocation();
@@ -19,8 +19,6 @@ const RouteWrapperComponent: FC<RouteWrapperProps> = ({ route }) => {
   const { pathname: currentPathname } = location;
 
   useEffect(() => {
-    console.log(path);
-    // if (!currentPathname?.includes(path)) return;
     if (!isFinalRoute(route)) return;
 
     if (title) {

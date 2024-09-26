@@ -58,7 +58,9 @@ export const CreateProjectForm: FC<CreateProjectFormProps> = ({ callback }) => {
           <InputError error={errors?.description} />
         </div>
         <div>
-          <Button>Save</Button>
+          <Button type="submit" className="success block">
+            Create Project
+          </Button>
         </div>
       </VerticalGapWrapper>
     </form>

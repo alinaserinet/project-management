@@ -1,3 +1,5 @@
+import { Container } from '@common/components';
+import { SectionHeader } from '@core';
 import { CreateTaskForm } from '@task';
 import { useSearchParams } from 'react-router-dom';
 
@@ -7,11 +9,13 @@ const CreateTask = () => {
 
   return (
     <div>
-      <h1>Create Task</h1>
-      <CreateTaskForm
-        callback={`/projects/${projectId}`}
-        project={{ id: projectId }}
-      />
+      <Container className="narrow">
+        <SectionHeader title="Create New Task" />
+        <CreateTaskForm
+          callback={`/projects/${projectId}`}
+          project={{ id: projectId }}
+        />
+      </Container>
     </div>
   );
 };

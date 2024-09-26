@@ -1,9 +1,9 @@
-import { useSetPageTitle } from '@core';
+import { SectionHeader, useSetPageTitle } from '@core';
 import { projectService, useGetProject } from '@project';
 import type { TaskPreview } from '@task';
 import { TaskPreviewCard, TasksPreviewWrapper } from '@task';
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const SingleProject = () => {
   const { id } = useParams<'id'>();
@@ -34,8 +34,11 @@ const SingleProject = () => {
 
   return (
     <div>
-      <h1>single project</h1>
-      <Link to={`/tasks/create?project=${project?.id}`}>New Task</Link>
+      <SectionHeader
+        title={`${project?.name} Tasks`}
+        createPath={`/tasks/create?project=${project?.id}`}
+        createTitle="New Task"
+      />
       <TasksPreviewWrapper loading={loading}>
         {tasks.map(task => (
           <TaskPreviewCard key={task.id} task={task} />

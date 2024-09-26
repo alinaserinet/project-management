@@ -7,12 +7,12 @@ const router: Router = {
   routes: [
     {
       path: '/',
-      title: 'projects',
+      title: 'Projects',
       component: lazy(() => import('./list')),
     },
     {
       path: '/create',
-      title: 'create project',
+      title: 'Create New Project',
       component: lazy(() => import('./create')),
     },
     {

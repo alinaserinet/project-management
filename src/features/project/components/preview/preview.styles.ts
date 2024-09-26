@@ -19,3 +19,29 @@ export const projectsPreviewWrapperStyles = css({
     gridTemplateColumns: 'repeat(4, 1fr)',
   },
 });
+
+export const projectsPreviewCardStyles = css({
+  '.footer': {
+    display: 'grid',
+    gap: theme.spacing.medium,
+    alignItems: 'center',
+    gridTemplateColumns: 'repeat(2, 1fr)',
+    marginTop: '0.5rem',
+  },
+  'a': {
+    display: 'block',
+    height: '100%',
+    width: '100%',
+    textDecoration: 'none',
+  },
+  'button': {
+    display: 'block',
+    width: '100%',
+  },
+  '.description': {
+    height: '4rem',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+  },
+});
