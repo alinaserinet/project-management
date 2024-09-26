@@ -9,5 +9,6 @@ export interface TaskPreview {
   project: {
     id: ID;
   };
+  date: string;
   createdAt: number;
 }

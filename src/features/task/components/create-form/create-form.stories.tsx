@@ -1,21 +1,24 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { CreateProjectForm } from '.';
+import { CreateTaskForm } from '.';
 
 const meta = {
-  title: 'project/create-form',
-  component: CreateProjectForm,
+  title: 'tasks/create-form',
+  component: CreateTaskForm,
   parameters: {
     layout: 'centered',
   },
-  tags: ['project'],
+  tags: ['tasks'],
   argTypes: {},
   args: {},
-} satisfies Meta<typeof CreateProjectForm>;
+} satisfies Meta<typeof CreateTaskForm>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: { callback: '/projects' },
+  args: {
+    callback: '/projects',
+    project: { id: 1 },
+  },
 };

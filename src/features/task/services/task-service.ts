@@ -27,7 +27,7 @@ export class TaskService {
     return taskTransformer(data);
   }
 
-  public async create(input: Omit<Task, 'createdAt' | 'id'>) {
+  public async create(input: Omit<Task, 'createdAt' | 'id' | 'status'>) {
     const { data } = await this.client.post<
       NoId<TransmissibleTask>,
       AxiosResponse<TransmissibleTaskPreview>
@@ -37,6 +37,7 @@ export class TaskService {
       title: input.title,
       project_id: input.project.id,
       status: TaskStatus.ToDo,
+      date: input.date,
     });
     return taskPreviewTransformer(data);
   }

@@ -8,7 +8,7 @@ const SingleProject = () => {
   const { id: projectId } = useParams<'id'>();
   const [tasks, setTasks] = useState<TaskPreview[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<unknown>(true);
+  const [error, setError] = useState<unknown>(null);
 
   useEffect(() => {
     if (!projectId) return;
@@ -28,17 +28,20 @@ const SingleProject = () => {
       <h1>single project</h1>
       <Link to={`/tasks/create?project=${projectId}`}>New Task</Link>
       <TasksPreviewWrapper loading={loading}>
-        {tasks.map(({ id, description, title, project, status, createdAt }) => (
-          <TaskPreviewCard
-            key={id}
-            id={id}
-            description={description}
-            title={title}
-            project={project}
-            status={status}
-            createdAt={createdAt}
-          />
-        ))}
+        {tasks.map(
+          ({ id, description, title, project, status, createdAt, date }) => (
+            <TaskPreviewCard
+              key={id}
+              id={id}
+              description={description}
+              title={title}
+              project={project}
+              status={status}
+              createdAt={createdAt}
+              date={date}
+            />
+          ),
+        )}
       </TasksPreviewWrapper>
     </div>
   );

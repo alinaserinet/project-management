@@ -14,6 +14,7 @@ export const taskPreviewTransformer = (
     project: {
       id: task.project_id,
     },
+    date: task.date,
   };
 };
 
@@ -27,5 +28,6 @@ export const taskTransformer = (task: TransmissibleTask): Task => {
     project: {
       id: task.project_id,
     },
+    date: task.date,
   };
 };

@@ -8,6 +8,7 @@ export interface TransmissibleTaskPreview {
   status: TaskStatus;
   project_id: ID;
   created_at: number;
+  date: string;
 }
 
 export interface TransmissibleTask extends TransmissibleTaskPreview {}

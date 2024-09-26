@@ -8,6 +8,7 @@ export const TaskPreviewCard: FC<TaskPreviewCardProps> = ({
   title,
   description,
   status,
+  date,
 }) => {
   return (
     <Card>
@@ -19,6 +20,9 @@ export const TaskPreviewCard: FC<TaskPreviewCardProps> = ({
       </div>
       <div>
         <h3>{status}</h3>
+      </div>
+      <div>
+        <h3>{date}</h3>
       </div>
     </Card>
   );
