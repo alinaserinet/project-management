@@ -98,7 +98,7 @@ processes:
    pnpm run build-sb
   ```
 
-- `api`: api: Starts a mock API server using `json-server`, watching the
+- `api`: Starts a mock API server using `json-server`, watching the
   `./mock/db.json` file on port `3001`.
 
   ```bash
