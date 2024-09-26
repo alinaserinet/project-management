@@ -1,5 +1,5 @@
 import type { FetchStatus, ID } from '@common/types';
-import { addProject } from '@project/slices';
+import { addProject, deleteProject } from '@project/slices';
 import type { ProjectPreview } from '@project/types';
 import type { StoreState } from '@store';
 import { useDispatch, useSelector } from 'react-redux';
@@ -25,5 +25,12 @@ export const useAddProject = () => {
   const dispatch = useDispatch();
   return (project: ProjectPreview) => {
     dispatch(addProject(project));
+  };
+};
+
+export const useDeleteProject = () => {
+  const dispatch = useDispatch();
+  return (id: ID) => {
+    dispatch(deleteProject(id));
   };
 };

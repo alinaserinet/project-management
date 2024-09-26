@@ -1,3 +1,4 @@
+import type { ID } from '@common/types';
 import { keyById } from '@common/utils';
 import { projectService } from '@project/services';
 import type { ProjectPreview, ProjectsState } from '@project/types';
@@ -21,6 +22,11 @@ export const projectsSlice = createSlice({
       const { id } = action.payload;
       state.list[id] = action.payload;
     },
+    deleteProject: (state, action: PayloadAction<ID>) => {
+      const id = action.payload;
+      const { [id]: _, ...rest } = state.list;
+      state.list = rest;
+    },
   },
 
   extraReducers: builder => {
@@ -38,5 +44,5 @@ export const projectsSlice = createSlice({
     });
   },
 });
-export const { addProject } = projectsSlice.actions;
+export const { addProject, deleteProject } = projectsSlice.actions;
 export const projectsReducer = projectsSlice.reducer;

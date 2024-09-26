@@ -41,4 +41,11 @@ export class ProjectService {
     });
     return projectPreviewTransformer(data);
   }
+
+  public async delete(id: ID) {
+    const { data } = await this.client.delete<TransmissibleProjectPreview>(
+      `${this.basePath}/${id}`,
+    );
+    return data;
+  }
 }
