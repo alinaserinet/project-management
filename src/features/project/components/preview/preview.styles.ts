@@ -5,6 +5,7 @@ export const projectsPreviewWrapperStyles = css({
   display: 'grid',
   gridTemplateColumns: '1fr',
   gap: theme.spacing.medium,
+  margin: '1.5rem 0',
 
   [`@media (min-width: ${theme.breakpoints.md})`]: {
     gridTemplateColumns: 'repeat(2, 1fr)',

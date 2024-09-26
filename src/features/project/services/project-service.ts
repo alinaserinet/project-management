@@ -1,8 +1,14 @@
+/* eslint-disable camelcase */
 import type { HttpClient, ID, NoId } from '@common/types';
 import type { Project } from '@project';
+import {
+  projectPreviewTransformer,
+  projectTransformer,
+} from '@project/services/transformers';
+import type { TransmissibleTaskPreview } from '@task';
+import { taskPreviewTransformer } from '@task';
 import type { AxiosResponse } from 'axios';
 
-import { projectPreviewTransformer, projectTransformer } from './transformers';
 import type {
   TransmissibleProject,
   TransmissibleProjectPreview,
@@ -47,5 +53,12 @@ export class ProjectService {
       `${this.basePath}/${id}`,
     );
     return data;
+  }
+
+  public async getTasks(id: ID) {
+    const { data } = await this.client.get<TransmissibleTaskPreview[]>(
+      `/tasks?project_id=${id}`,
+    );
+    return data?.map(taskPreviewTransformer);
   }
 }
