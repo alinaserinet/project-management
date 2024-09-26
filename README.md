@@ -89,7 +89,7 @@ processes:
    pnpm run prepare
   ```
 
-- `sb`: Starts the Storybook server for component development on port 6006.
+- `sb`: Starts the Storybook server for component development on port `6006`.
 
   ```bash
    pnpm run sb
