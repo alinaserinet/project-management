@@ -37,7 +37,7 @@ export const RouterGenerator: FC<RouterGeneratorProps> = ({ router }) => {
                 path={route.path}
                 element={
                   <GuardsWrapper guards={route.guards}>
-                    <RouteWrapper {...route} />
+                    <RouteWrapper route={route} />
                   </GuardsWrapper>
                 }
                 key={route.path}

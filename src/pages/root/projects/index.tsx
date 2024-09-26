@@ -1,5 +1,6 @@
 import type { Router } from '@core';
 import { RouterGenerator } from '@core';
+import { NoProjectParamGuard } from '@project';
 import { lazy } from 'react';
 
 const router: Router = {
@@ -16,8 +17,8 @@ const router: Router = {
     },
     {
       path: '/:id',
-      title: 'project',
       component: lazy(() => import('./single')),
+      guards: [NoProjectParamGuard],
     },
   ],
 };

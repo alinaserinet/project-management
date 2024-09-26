@@ -1,14 +1,15 @@
 import type { Router } from '@core';
 import { RouterGenerator } from '@core';
-import { SelectProjectGuard } from '@project';
+import { NoProjectQueryGuard } from '@project';
 import { lazy } from 'react';
 
 const router: Router = {
   routes: [
     {
       path: '/create',
+      title: 'create task',
       component: lazy(() => import('./create')),
-      guards: [SelectProjectGuard],
+      guards: [NoProjectQueryGuard],
     },
   ],
 };

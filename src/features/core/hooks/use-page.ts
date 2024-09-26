@@ -12,14 +12,13 @@ export const usePageItem = (key: keyof PageState) => {
 export const useSetPageTitle = () => {
   const dispatch = useDispatch();
   return (title: string | null) => {
-    document.title = title ?? '';
     dispatch(setTitle(title));
   };
 };
 
 export const useSetPageDescription = () => {
   const dispatch = useDispatch();
-  return (description: string) => {
+  return (description: string | null) => {
     dispatch(setDescription(description));
   };
 };

@@ -17,12 +17,10 @@ const router: Router = {
     },
     {
       path: '/projects/*',
-      title: 'root',
       component: lazy(() => import('./projects')),
     },
     {
       path: '/tasks/*',
-      title: 'root',
       component: lazy(() => import('./tasks')),
     },
   ],

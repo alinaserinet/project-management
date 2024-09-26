@@ -1,23 +1,27 @@
+import { isFinalRoute } from '@common/utils';
 import { useSetPageDescription, useSetPageTitle } from '@core/hooks';
 import type { Route } from '@core/types';
 import type { FC } from 'react';
+import { memo } from 'react';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router';
 
-interface RouteWrapperProps extends Route {}
+interface RouteWrapperProps {
+  route: Route;
+}
 
-export const RouteWrapper: FC<RouteWrapperProps> = ({
-  component: Component,
-  path,
-  title,
-  description,
-}) => {
+const RouteWrapperComponent: FC<RouteWrapperProps> = ({ route }) => {
+  const { component: Component, path, title, description } = route;
   const setPageTitle = useSetPageTitle();
   const setPageDescription = useSetPageDescription();
-  const { pathname: currentPathname } = useLocation();
+  const location = useLocation();
+
+  const { pathname: currentPathname } = location;
 
   useEffect(() => {
-    if (!currentPathname?.includes(path)) return;
+    console.log(path);
+    // if (!currentPathname?.includes(path)) return;
+    if (!isFinalRoute(route)) return;
 
     if (title) {
       setPageTitle(title);
@@ -28,8 +32,8 @@ export const RouteWrapper: FC<RouteWrapperProps> = ({
     }
 
     return () => {
-      setPageTitle('');
-      setPageDescription('');
+      setPageTitle(null);
+      setPageDescription(null);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPathname]);
@@ -38,3 +42,5 @@ export const RouteWrapper: FC<RouteWrapperProps> = ({
 
   return <Component />;
 };
+
+export const RouteWrapper = memo<RouteWrapperProps>(RouteWrapperComponent);

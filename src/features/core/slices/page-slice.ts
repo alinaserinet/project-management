@@ -12,6 +12,7 @@ export const pageSlice = createSlice({
   initialState: initialPageState,
   reducers: {
     setTitle: (state, action: PayloadAction<string | null>) => {
+      document.title = action.payload ?? '';
       state.title = action.payload;
     },
     setDescription: (state, action: PayloadAction<string | null>) => {
