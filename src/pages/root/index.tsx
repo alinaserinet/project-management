@@ -32,7 +32,9 @@ const RootRouter = () => {
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
-    dispatch(fetchProjects());
+    const controller = new AbortController();
+    dispatch(fetchProjects(controller.signal));
+    return () => controller.abort();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

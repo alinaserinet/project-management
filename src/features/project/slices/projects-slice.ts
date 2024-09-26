@@ -10,9 +10,12 @@ const initialProjectsState: ProjectsState = {
   list: {},
 };
 
-export const fetchProjects = createAsyncThunk('projects/fetch', () => {
-  return projectService.getAll();
-});
+export const fetchProjects = createAsyncThunk(
+  'projects/fetch',
+  (signal?: AbortSignal) => {
+    return projectService.getAll(signal);
+  },
+);
 
 export const projectsSlice = createSlice({
   name: 'projects',

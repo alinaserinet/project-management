@@ -12,12 +12,15 @@ const SingleProject = () => {
 
   useEffect(() => {
     if (!projectId) return;
+    const controller = new AbortController();
     setLoading(true);
     projectService
-      .getTasks(projectId)
+      .getTasks(projectId, controller.signal)
       .finally(() => setLoading(false))
       .then(setTasks)
       .catch(setError);
+
+    return () => controller.abort();
   }, [projectId]);
 
   // eslint-disable-next-line no-console
