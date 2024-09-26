@@ -12,7 +12,7 @@ const router: Router = {
   routes: [
     {
       path: '/',
-      title: 'home',
+      title: 'Home',
       component: lazy(() => import('./home')),
     },
     {

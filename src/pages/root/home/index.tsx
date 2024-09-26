@@ -1,10 +1,14 @@
+import { Button } from '@common/components';
+import { SectionHeader } from '@core';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
     <div>
-      <h1>home</h1>
-      <Link to="/projects">Projects</Link>
+      <SectionHeader title="Home" />
+      <Link to="/projects">
+        <Button>Projects</Button>
+      </Link>
     </div>
   );
 };

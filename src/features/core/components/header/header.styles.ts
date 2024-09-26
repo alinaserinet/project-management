@@ -9,3 +9,9 @@ export const headerStyles = css({
   justifyContent: 'center',
   color: theme.colors.light,
 });
+
+export const headerScaffoldStyles = css({
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+});

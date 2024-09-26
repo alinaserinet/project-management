@@ -23,6 +23,8 @@
       "@store": ["./src/store"],
       "@core": ["./src/features/core"],
       "@core/*": ["./src/features/core/*"],
+      "@auth": ["./src/features/auth"],
+      "@auth/*": ["./src/features/auth/*"],
       "@project": ["./src/features/project"],
       "@project/*": ["./src/features/project/*"],
       "@task": ["./src/features/task"],
