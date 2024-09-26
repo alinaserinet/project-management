@@ -1,4 +1,5 @@
 import { Button, Card, VerticalGapWrapper } from '@common/components';
+import { textCutter } from '@common/utils';
 import { getTaskStatus, getTaskStatusesArray } from '@task/data';
 import type { TaskStatus } from '@task/enums';
 import { taskService } from '@task/services';
@@ -48,7 +49,7 @@ export const TaskPreviewCard: FC<TaskPreviewCardProps> = ({ task }) => {
           </div>
         </div>
         <div className="description">
-          <p>{task.description}</p>
+          <p>{textCutter(task.description ?? '')}</p>
         </div>
         <div className="meta">
           <span>{task.date}</span>
