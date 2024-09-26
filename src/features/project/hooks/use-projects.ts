@@ -15,9 +15,9 @@ export const useProjectsStatus = () => {
   return useSelector<StoreState, FetchStatus>(state => state.projects.status);
 };
 
-export const useProject = (id: ID) => {
-  return useSelector<StoreState, ProjectPreview | null>(
-    state => state.projects.list[id] ?? null,
+export const useGetProject = (id?: ID | null) => {
+  return useSelector<StoreState, ProjectPreview | null>(state =>
+    id ? state.projects.list[id] : null,
   );
 };
 
