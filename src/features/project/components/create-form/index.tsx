@@ -41,7 +41,7 @@ export const CreateProjectForm: FC<CreateProjectFormProps> = ({ callback }) => {
     });
     addProject(newProject);
     reset();
-    navigate(callback);
+    navigate(callback, { replace: true });
   };
 
   return (

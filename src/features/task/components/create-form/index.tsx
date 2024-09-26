@@ -45,7 +45,7 @@ export const CreateTaskForm: FC<CreateTaskFormProps> = ({
       date: data.date,
     });
     reset();
-    navigate(callback);
+    navigate(callback, { replace: true });
   };
 
   return (
