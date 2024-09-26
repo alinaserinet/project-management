@@ -6,6 +6,9 @@ This project is a basic web-based project management.
 
 - **React**: A JavaScript library for building dynamic and interactive user
   interfaces.
+- **TypeScript**: A strongly typed programming language that builds on
+  JavaScript, providing optional static typing and enhanced tooling for
+  large-scale applications.
 - **Vite**: A next-generation frontend build tool that offers instant server
   start and lightning-fast HMR (Hot Module Replacement) during development.
 - **pnpm**: A fast, disk space-efficient package manager that uses symlinks to
